@@ -1,5 +1,7 @@
 package org.seckill.entity;
 
+import com.google.common.base.Objects;
+
 import java.util.Date;
 
 /**
@@ -9,9 +11,9 @@ public class Seckill {
     private long seckillID;
     private String name;
     private int number;
-    private Date start_time;
-    private Date end_time;
-    private Date create_time;
+    private Date startTime;
+    private Date endTime;
+    private Date createTime;
 
     public long getSeckillID() {
         return seckillID;
@@ -37,40 +39,39 @@ public class Seckill {
         this.number = number;
     }
 
-    public Date getStart_time() {
-        return start_time;
+    public Date getStartTime() {
+        return startTime;
     }
 
-    public void setStart_time(Date start_time) {
-        this.start_time = start_time;
+    public void setStartTime(Date startTime) {
+        this.startTime = startTime;
     }
 
-    public Date getEnd_time() {
-        return end_time;
+    public Date getEndTime() {
+        return endTime;
     }
 
-    public void setEnd_time(Date end_time) {
-        this.end_time = end_time;
+    public void setEndTime(Date endTime) {
+        this.endTime = endTime;
     }
 
-    public Date getCreate_time() {
-        return create_time;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCreate_time(Date create_time) {
-        this.create_time = create_time;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
     @Override
     public String toString() {
-        return com.google.common.base.Objects.toStringHelper(this)
+        return Objects.toStringHelper(this)
                 .add("seckillID", seckillID)
                 .add("name", name)
                 .add("number", number)
-                .add("start_time", start_time)
-                .add("end_time", end_time)
-                .add("create_time", create_time)
+                .add("startTime", startTime)
+                .add("endTime", endTime)
+                .add("createTime", createTime)
                 .toString();
     }
-
 }
