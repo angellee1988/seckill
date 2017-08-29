@@ -1,6 +1,10 @@
 package org.seckill.dao;
 
+import org.apache.ibatis.annotations.Param;
 import org.seckill.entity.SuccessKilled;
+import org.seckill.model.SeckillInsertModel;
+
+import java.util.List;
 
 /**
  * Created by zangyaoyi on 2017/8/22.
@@ -13,8 +17,9 @@ public interface SuccessKilledDao {
      * @param userPhone
      * @return 插入的结果行数
      */
-    int insertSuccessKilled(long seckillId, long userPhone);
+    int insertSuccessKilled(@Param("seckillId") long seckillId, @Param("userPhone") long userPhone);
 
+    int batchInsert(@Param("list")List<SeckillInsertModel> list);
 
     /**
      * 根据ID查询对象并携带秒杀对象
