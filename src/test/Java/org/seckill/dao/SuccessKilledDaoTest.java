@@ -2,14 +2,10 @@ package org.seckill.dao;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.seckill.model.SeckillInsertModel;
+import org.seckill.entity.SuccessKilled;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 
 /**
  *
@@ -33,14 +29,16 @@ public class SuccessKilledDaoTest {
         * 循环单挑插入1000次
         * */
         long beginTime=System.currentTimeMillis();
-        System.out.println("begin:"+beginTime);
-        for(int i=0;i<1000;i++){
-            long id=2000L+i;
-            long phone = 18700000000L+i;
+        long id=3000L;
+        long phone = 18700000000L;
+        for(int i=0;i<1;i++){
+            id+=i;
+            phone+=i;
             int insertCount=successKilledDao.insertSuccessKilled(id,phone);
             System.out.println("insertCount:"+insertCount);
         }
         long endTime=System.currentTimeMillis();
+        System.out.println("begin:"+beginTime);
         System.out.println("end："+endTime);
         System.out.println("diff:"+(endTime-beginTime));
 
@@ -71,7 +69,11 @@ public class SuccessKilledDaoTest {
 
     @Test
     public void queryByIDWithSeckill() throws Exception {
-
+        long id=1000L;
+        long phone=18700000000L;
+        SuccessKilled successKilled=successKilledDao.queryByIDWithSeckill(id,phone);
+        System.out.println(successKilled);
+        System.out.println(successKilled.getSeckill());
     }
 
 }
