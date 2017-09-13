@@ -2,12 +2,13 @@ package org.seckill.entity;
 
 import com.google.common.base.Objects;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Created by zangyaoyi on 2017/8/22.
  */
-public class Seckill {
+public class Seckill implements Serializable {
     private long seckillID;
     private String name;
     private int number;
